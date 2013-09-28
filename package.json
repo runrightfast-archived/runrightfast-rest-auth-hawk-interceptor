@@ -1,10 +1,10 @@
 {
-	"name":"runrightfast-rest-auth-hawk-intercepor",
-	"version":"0.0.1",
+	"name":"runrightfast-rest-auth-hawk-interceptor",
+	"version":"0.0.2",
 	"description":"RunRightFast Auth Hawk Interceptor that plugs into [cujojs/rest](https://github.com/cujojs/rest)",
 	"repository":{
 		"type":"git",
-		"url":"https://github.com/runrightfast/runrightfast-rest-auth-hawk-intercepor.git"
+		"url":"https://github.com/runrightfast/runrightfast-rest-auth-hawk-interceptor.git"
 	},
 	"main":"index",
 	"scripts":{
