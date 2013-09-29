@@ -18,14 +18,13 @@
 var expect = require('chai').expect;
 
 var credentials = {
-	d74s3nz2873n : {
-		key : 'werxhqb98rpaxn39848xrunpaw3489ruxnpa98w4rxn',
+	"7c3f36371d144d91bcd747842f3d9746" : {
+		key : '5b85a5b854f84f9b9d62f4bc45d9fbf1',
 		algorithm : 'sha256'
 	}
 };
 
 var getCredentials = function(id, callback) {
-
 	return callback(null, credentials[id]);
 };
 
@@ -119,9 +118,9 @@ describe('Hawk Interceptor', function() {
 			auth : {
 				hawk : {
 					credentials : {
-						id : 'd74s3nz2873n',
-						key : 'werxhqb98rpaxn39848xrunpaw3489ruxnpa98w4rxn',
-						algorithm : 'sha256'
+						id : '7c3f36371d144d91bcd747842f3d9746',
+						key : credentials['7c3f36371d144d91bcd747842f3d9746'].key,
+						algorithm : credentials['7c3f36371d144d91bcd747842f3d9746'].algorithm
 					}
 				},
 				logLevel : 'DEBUG'
@@ -158,9 +157,9 @@ describe('Hawk Interceptor', function() {
 			auth : {
 				hawk : {
 					credentials : {
-						id : 'd74s3nz2873n',
-						key : 'werxhqb98rpaxn39848xrunpaw3489ruxnpa98w4rxn',
-						algorithm : 'sha256'
+						id : '7c3f36371d144d91bcd747842f3d9746',
+						key : credentials['7c3f36371d144d91bcd747842f3d9746'].key,
+						algorithm : credentials['7c3f36371d144d91bcd747842f3d9746'].algorithm
 					},
 					ext : 'app-specific-data'
 				},
