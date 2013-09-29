@@ -86,7 +86,7 @@ var createRestClient = function(config) {
 		if (config.auth.hawk) {
 			console.log('chaining hawk-auth-interceptor to rest client');
 			var hawk = require('..');
-			rest = rest.chain(hawk, config.auth.hawk);
+			rest = rest.chain(hawk.interceptor, config.auth);
 		}
 	}
 
@@ -107,6 +107,8 @@ describe('Hawk Interceptor', function() {
 			timeout : 1000
 		}, function() {
 			console.log('All servers stopped');
+			var hawk = require('..');
+			hawk.sntp.stop();
 			done();
 		});
 	});
@@ -120,10 +122,50 @@ describe('Hawk Interceptor', function() {
 						id : 'd74s3nz2873n',
 						key : 'werxhqb98rpaxn39848xrunpaw3489ruxnpa98w4rxn',
 						algorithm : 'sha256'
-					},
-					ext : '',
-					logLevel : 'DEBUG'
+					}
+				},
+				logLevel : 'DEBUG'
+			}
+		});
+
+		client('http://localhost:8000/api/hapi/plugins').then(function(response) {
+			console.log('response.status.code = ' + response.status.code);
+			done();
+		}, function(response) {
+			var getEntity = function() {
+				try {
+					JSON.parse(response.entity);
+				} catch (err) {
+					return response.entity;
 				}
+			};
+
+			var info = {
+				statusCode : response.status.code,
+				statusText : response.status.text,
+				entity : getEntity()
+			};
+			console.error('log request failed: ' + JSON.stringify(info));
+
+			done(new Error(JSON.stringify(info)));
+		});
+
+	});
+
+	it('can automatically sync with sntp', function(done) {
+		var client = createRestClient({
+			logLevel : 'ERROR',
+			auth : {
+				hawk : {
+					credentials : {
+						id : 'd74s3nz2873n',
+						key : 'werxhqb98rpaxn39848xrunpaw3489ruxnpa98w4rxn',
+						algorithm : 'sha256'
+					},
+					ext : 'app-specific-data'
+				},
+				sntp : true,
+				logLevel : 'DEBUG'
 			}
 		});
 
