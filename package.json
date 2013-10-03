@@ -1,6 +1,6 @@
 {
 	"name":"runrightfast-rest-auth-hawk-interceptor",
-	"version":"0.0.4",
+	"version":"0.0.5",
 	"description":"RunRightFast Auth Hawk Interceptor that plugs into [cujojs/rest](https://github.com/cujojs/rest)",
 	"repository":{
 		"type":"git",
@@ -17,9 +17,9 @@
 	"author":"Alfio Zappala",
 	"license":"Apache v2",
 	"dependencies":{
-		"lodash":"2.0.x",
-		"hoek":"1.0.x",
-		"runrightfast-commons":"git://github.com/runrightfast/runrightfast-commons.git#0.0.10",
+		"lodash":"2.2.x",
+		"hoek":"1.1.x",
+		"runrightfast-commons":"git://github.com/runrightfast/runrightfast-commons.git#0.0.11",
 		"rest":"1.0.x",
 		"log4js":"0.6.x",
 		"hawk":"1.1.x",
