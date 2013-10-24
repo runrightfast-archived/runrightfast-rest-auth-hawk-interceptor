@@ -1,6 +1,6 @@
 {
 	"name":"runrightfast-rest-auth-hawk-interceptor",
-	"version":"0.0.6",
+	"version":"0.0.7",
 	"description":"RunRightFast Auth Hawk Interceptor that plugs into [cujojs/rest](https://github.com/cujojs/rest)",
 	"repository":{
 		"type":"git",
@@ -19,7 +19,7 @@
 	"dependencies":{
 		"lodash":"2.2.x",
 		"hoek":"1.1.x",
-		"runrightfast-commons":"git://github.com/runrightfast/runrightfast-commons.git#0.0.12",
+		"runrightfast-commons":"git://github.com/runrightfast/runrightfast-commons.git#0.0.16",
 		"rest":"1.0.x",
 		"log4js":"0.6.x",
 		"hawk":"1.1.x",
@@ -34,7 +34,7 @@
 		"sinon-chai":"~2.4.0",
 		"grunt-mocha-cov":"~0.0.7",
 		"grunt-contrib-clean":"~0.5.0",
-		"hapi":"~1.11.1",
+		"hapi":"~1.14.x",
 		"runrightfast-logging-service-hapi-plugin":"git://github.com/runrightfast/runrightfast-logging-service-hapi-plugin.git",
 		"runrightfast-hapi-server":"git://github.com/runrightfast/runrightfast-hapi-server.git",
 		"lout":"~0.5.0",		
